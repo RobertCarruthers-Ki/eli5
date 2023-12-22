@@ -80,7 +80,7 @@ class _PipelinePatched(Pipeline):
 
         return check
 
-    @available_if(_estimator_has('_final_estimator'))
+    @available_if(_estimator_has('score'))
     def score(self, X, y=None, **score_params):
         Xt = X
         for name, transform in self.steps[:-1]:

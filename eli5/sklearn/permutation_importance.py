@@ -254,23 +254,23 @@ class PermutationImportance(BaseEstimator, MetaEstimatorMixin):
 
         return check
 
-    @available_if(_estimator_has('wrapped_estimator_'))
+    @available_if(_estimator_has('score'))
     def score(self, X, y=None, *args, **kwargs):
         return self.wrapped_estimator_.score(X, y, *args, **kwargs)
 
-    @available_if(_estimator_has('wrapped_estimator_'))
+    @available_if(_estimator_has('predict'))
     def predict(self, X):
         return self.wrapped_estimator_.predict(X)
 
-    @available_if(_estimator_has('wrapped_estimator_'))
+    @available_if(_estimator_has('predict_proba'))
     def predict_proba(self, X):
         return self.wrapped_estimator_.predict_proba(X)
 
-    @available_if(_estimator_has('wrapped_estimator_'))
+    @available_if(_estimator_has('predict_log_proba'))
     def predict_log_proba(self, X):
         return self.wrapped_estimator_.predict_log_proba(X)
 
-    @available_if(_estimator_has('wrapped_estimator_'))
+    @available_if(_estimator_has('decision_function'))
     def decision_function(self, X):
         return self.wrapped_estimator_.decision_function(X)
 
